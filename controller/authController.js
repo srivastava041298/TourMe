@@ -20,7 +20,7 @@ exports.signup= async(req,res,next)=>{
         const token=await jwt.sign({id:newUser._id},process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRES_IN});
         res.cookie('jwt',token,{
             expires:new Date(Date.now()+90*24*60*60*1000),
-            // secure:true,
+            secure:true,
             httpOnly:true
         })
        res.status(201).json({
