@@ -3,7 +3,7 @@ export const forgetPassword = async (email) => {
     try {
       const res = await axios({
         method: 'POST',
-        url: 'http://localhost:3000/api/v1/user/forgetPassword',
+        url: '/api/v1/user/forgetPassword',
         data:{
             email: email
         }

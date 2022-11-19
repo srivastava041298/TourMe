@@ -4,7 +4,7 @@ import { showAlert } from "./alert";
     try{
             const res=await axios({
                 method:'POST',
-                url:'http://localhost:3000/api/v1/user/login',
+                url:'/api/v1/user/login',
                 data:{
                     email:email,
                     password:password
@@ -29,7 +29,7 @@ import { showAlert } from "./alert";
     try{
         const res=await axios({
             method:'GET',
-            url:'http://localhost:3000/api/v1/user/logout'
+            url:'/api/v1/user/logout'
         });
         if(res.data.status==='success')
         location.reload(true);
@@ -45,7 +45,7 @@ export const updateUser=async(form)=>{
     try{
         const res=await axios({
             method:'PATCH',
-            url:'http://localhost:3000/api/v1/user/updateMe',
+            url:'/api/v1/user/updateMe',
             
              data:form
         })
@@ -69,7 +69,7 @@ export const updatePassword=async(currentPassword,password,confirmPassword)=>{
     try{
         const res=await axios({
             method:'PATCH',
-            url:'http://localhost:3000/api/v1/user/updateMyPassword',
+            url:'/api/v1/user/updateMyPassword',
             data:{
                 currentPassword:currentPassword,
                 password:password,

@@ -3,7 +3,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
     try {
       const res = await axios({
         method: 'POST',
-        url: 'http://localhost:3000/api/v1/user/signup',
+        url: '/api/v1/user/signup',
         data: {
           name:name,
           email:email,
