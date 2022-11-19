@@ -1,0 +1,73 @@
+extends base
+block content 
+    main.main
+        .user-view
+            nav.user-view-menu
+                ul.side-nav
+                    li.side-nav-active
+                        a(href='#')
+                            i.fa-solid.fa-gear.margin(style='color:#fff') 
+                            | Settings
+                    li
+                        a(href='/my-tours')
+                            i.fa-solid.fa-book-open-reader.margin(style='color:#fff')
+                            | My bookings
+                    li
+                        a(href='#')
+                            i.fa-solid.fa-star.margin(style='color:#fff')
+                            | My reviews
+                    li
+                        a(href='#')
+                            i.fa-solid.fa-money-bill.margin(style='color:#fff')
+                            | Billing
+                //- -if(user.role === 'admin')          
+                //-     .admin-nav
+                //-         h5.admin-nav-heading Admin
+                //-         ul.side-nav
+                //-             li
+                //-                 a(href='#')
+                //-                     i.fa-solid.fa-location-dot.margin(style='color:#fff')
+                //-                     | Manage tours
+                //-             li
+                //-                 a(href='#')
+                //-                     i.fa-solid.fa-user.margin(style='color:#fff')
+                //-                     | Manage users
+                //-             li
+                //-                 a(href='#')
+                //-                     i.fa-solid.fa-star.margin(style='color:#fff')
+                //-                     | Manage reviews
+                //-             li
+                //-                 a(href='#')
+                //-                     i.fa-solid.fa-book-open-reader.margin(style='color:#fff')
+                //-                     | Manage bookings        
+            .user-view__content
+                .user-view__form-container
+                    h2.heading--secondary.margin-btm Your account settings
+                    form.form.form-user-data
+                        .form-group
+                            label.form-label(for='name') Name
+                            input#name.form-input(type='text' value=`${user.name}` required='required' name='name')
+                        .form-group
+                            label.form-label(for='email') Email address
+                            input#email.form-input(type='email' value=`${user.email}` required='required' name='email')
+                        .form-group.form__photo-upload
+                            img.form__user-photo(src=`/img/user/${user.photo}` alt='User photo')
+                            input.form-upload(type='file' accept='image/*' id='photo' name='photo')
+                            label.btn-text(for='photo') Choose new photo
+                        .form-group.right
+                            button.btn.btn-small.btn-green Save settings
+                .line &nbsp;
+                .user-view__form-container
+                    h2.heading--secondary.margin-btm Password change
+                    form.form.form-user-settings.updatePass
+                        .form-group
+                            label.form-label(for='password-current') Current password
+                            input#password-current.form-input(type='password' placeholder='Current password' required='required' minlength='8')
+                        .form-group
+                            label.form-label(for='password') New password
+                            input#password.form-input(type='password' placeholder='New password' required='required' minlength='8')
+                        .form-group.ma-bt-lg
+                            label.form-label(for='password-confirm') Confirm password
+                            input#password-confirm.form-input(type='password' placeholder='Confirm password' required='required' minlength='8')
+                        .form-group.right
+                            button.btn.btn-small.btn-green.btn-save-password Save password

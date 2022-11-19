@@ -1,0 +1,16 @@
+extends base 
+
+block content
+    .main
+        .password-reset-form
+            h2.heading--secondary.bottom-margin Reset your password
+            form.form.form--resetPass
+                .form-group.margin-btm
+                    label.form-label(for='password') Password
+                    input#password.form-input(type='password', placeholder='Enter your password', required, minlength='8')
+                .form-group.margin-btm
+                    label.form-label(for='password-confirm') Confirm Password
+                    input#password-confirm.form-input(type='password', placeholder='Confirm password', required, minlength='8') 
+                           
+                .form-group
+                    button.btn.btn-green.btn-token(data-token=`${token}`) Reset password

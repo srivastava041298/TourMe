@@ -1,0 +1,15 @@
+extends base
+block content 
+    .main
+        .login-form
+            h2.heading--secondary.bottom-margin Log into your account
+            form.form.form-login
+                .form-group.margin-btm
+                    label.form-label(for='email') Email address
+                    input#email.form-input(type='email' placeholder='Enter your email' required='required')
+                .form-group.margin-btm
+                    label.form-label(for='password') Password
+                    input#password.form-input(type='password' placeholder='Enter your password' required='required' minlength='8')
+                .form-group-btn
+                    button.btn.btn-green.btn-login Login
+                    a.forget-password(href='/forget-password') Forget Password?

@@ -1,0 +1,14 @@
+header.header 
+            nav.nav 
+                a.nav-el(href='/') All Tours 
+            .header-logo 
+                img(src='/img/logo-white.png' alt='header-logo')
+            nav.nav.nav-user 
+                if user 
+                    a.nav-el.nav_el-logout Log out
+                    a.nav-el(href='/me')
+                        img.nav_user-img(src=`/img/user/${user.photo}` alt=`Photo of ${user.name}`)
+                        span.user-name=user.name.split(' ')[0]
+                else    
+                    a.nav-el.gap(href='/login') Log in
+                    a.nav-el.signup(href='/signup') Sign up

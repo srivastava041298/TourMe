@@ -1,0 +1,34 @@
+html 
+    head 
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer')
+        link(rel='stylesheet' href='/css/style.css')
+        link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+        link(rel='stylesheet' href='https://unpkg.com/leaflet@1.9.2/dist/leaflet.css' integrity='sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=' crossorigin='')
+        title Natours | #{title}
+        
+    body 
+        include header
+        //-CONTENT        
+        block content 
+            h1 This is a placeholder page
+        include footer
+  
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js')  
+    script(src='https://unpkg.com/leaflet@1.9.2/dist/leaflet.js' integrity='sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=' crossorigin='')
+    script(src='/JS/leaflet.js')
+    script(src='https://js.stripe.com/v3/')
+    script(src='/JS/bundle.js')  
+   
+    
+
+
+
+
+
+
+
+
+
+
