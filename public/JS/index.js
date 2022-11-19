@@ -21,7 +21,7 @@ if(loginForm)
        
         const email=document.getElementById('email').value;
         const password=document.getElementById('password').value;
-        console.log(email,password);
+        // console.log(email,password);
         login(email,password);
         });
 }
@@ -93,7 +93,7 @@ if (signupForm) {
       const confirmPassword = document.getElementById('password-confirm').value;
       const token = document.querySelector('.btn-token').dataset.token;
       passwordReset(password,confirmPassword,token);
-      console.log(token);
+      // console.log(token);
     });
   }
   if(bookBtn)
@@ -101,7 +101,7 @@ if (signupForm) {
     bookBtn.addEventListener('click',e=>{
         e.target.textContent='processing...';
         const tourId=e.target.dataset.tourId;
-        console.log(tourId);
+        // console.log(tourId);
         bookTour(tourId);
     })
   }

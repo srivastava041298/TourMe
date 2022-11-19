@@ -1,4 +1,4 @@
-
+const compression= require('compression');
 const express=require('express');
 const path=require('path');
 const fs=require('fs');
@@ -25,6 +25,7 @@ app.use(xss());
 app.use(hpp({
     whitelist:['duration','ratingsAverage','ratingsQuantity','difficulty','maxGroupSize']
 }));
+app.use(compression());
 
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Credentials', true);

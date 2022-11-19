@@ -25,7 +25,7 @@ const APIFeatures=require('./../utils/APIFeatures');
             })
         }
        
-        console.log(err);
+        // console.log(err);
        }  
     
 }
@@ -88,7 +88,7 @@ catch(err)
         })
     }
 
-console.log(err);
+// console.log(err);
 }   
 }
 exports.getOne=(Model,populateOptions)=>async(req,res,next)=>{
@@ -129,7 +129,7 @@ catch(err)
     }
 
 
-console.log(err);
+// console.log(err);
 }   
 }
 exports.deleteOne=Model=>async(req,res)=>{
@@ -149,6 +149,6 @@ res.status(404).json({
     meassage:'Invalid data!'
    
 })
-console.log(err);
+// console.log(err);
 }   
 }

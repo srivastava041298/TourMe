@@ -1,4 +1,4 @@
-console.log('hey i am aman!');
+// console.log('hey i am aman!');
 const leaflet=document.getElementById('map');
 if(leaflet)
 {

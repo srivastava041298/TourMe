@@ -61,7 +61,7 @@ exports.login=async(req,res,next)=>{
             return next(new AppError('Please provide email and password',401));
         }
        const user=await User.findOne({email:email});
-       console.log(user);
+    //    console.log(user);
        if(!user || !await user.correctPassword(password,user.password))
        {
         return next(new AppError('Invalid email or password',401));
@@ -92,7 +92,7 @@ exports.protect=async (req,res,next)=>{
       if(req.headers.authorization && req.headers.authorization.startsWith('Bearer'))
       {
          token=req.headers.authorization.split(' ')[1];
-         console.log(token);
+        //  console.log(token);
       }
       else if(req.cookies.jwt)
       {
@@ -103,7 +103,7 @@ exports.protect=async (req,res,next)=>{
         return next(new AppError('You are not logged In! Please login to get acccess!',401));
       }
       const decoded=await jwt.verify(token,process.env.JWT_SECRET);
-      console.log(decoded);
+    //   console.log(decoded);
       const currentUser=await User.findById(decoded.id);
       if(!currentUser)
       {
@@ -149,7 +149,7 @@ exports.forgetPassword=async (req,res,next)=>{
             return next(new AppError('There is no user with this email address!',404));
         }
         const resetToken=user.createPasswordResetToken();
-        console.log(resetToken);
+        // console.log(resetToken);
         await user.save({validateBeforeSave:false});
          
          try{
@@ -212,7 +212,7 @@ exports.resetPassword=async (req,res,next)=>{
 exports.updatePassword=async (req,res,next)=>{
     try{
        const user=await User.findById(req.user.id);
-       console.log(user.password,req.body.currentPassword);
+    //    console.log(user.password,req.body.currentPassword);
 
        if(!(await user.correctPassword(req.body.currentPassword,user.password)))
        {

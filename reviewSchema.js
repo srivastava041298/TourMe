@@ -69,7 +69,7 @@ else{
     
     })
 }
-console.log(stats);
+// console.log(stats);
 
 }
 reviewSchema.post('save',function(){
@@ -79,7 +79,7 @@ reviewSchema.post('save',function(){
 reviewSchema.pre(/^findOneAnd/,async function(next){
     this.r=  await this.clone().findOne();
    
-    console.log(this.r);
+    // console.log(this.r);
     next();
 })
 reviewSchema.post(/^findOneAnd/, async function(){
